@@ -152,7 +152,7 @@ conversation_simulation:
   response_style: string         # cara user merespons agent
   objection_trigger: string | null  # objection yang akan dilontarkan
   objection_turn: integer | null    # turn berapa objection muncul
-  edge_case: string | null       # tech-illiterate | scam | toxic | dll
+  edge_case: string | null       # tech-illiterate | scam | toxic | etc.
   max_turns: integer             # berapa turn user akan respons sebelum ghost/stop
 
 expected_outcome:
@@ -177,7 +177,7 @@ Untuk setiap profile, jalankan simulasi multi-turn:
    - Re-judge hasil fix
 6. Catat AI response ke user
 7. Generate next user message berdasarkan:
-   - psychology type (analytical → jawaban detail, driver → jawaban pendek, dll)
+   - psychology type (analytical → jawaban detail, driver → jawaban pendek, etc.)
    - response_style dari profile
    - current state (jika offering → mungkin objection, jika closing → mungkin accept/reject)
 8. Cek terminal condition:

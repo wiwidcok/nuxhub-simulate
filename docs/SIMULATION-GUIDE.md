@@ -2,7 +2,7 @@
 
 ## Prerequisites
 1. Project source code ada di `<your-nuxhub-source-path>/`
-2. Skill packs nuxhub terinstall di Hermes (`nuxhub-orchestrator`, `nuxhub-discovery`, dll)
+2. Skill packs nuxhub terinstall di Hermes (`nuxhub-orchestrator`, `nuxhub-discovery`, etc.)
 3. Skill `nuxhub-simulate` terinstall
 
 ## Menjalankan Simulasi
@@ -42,7 +42,7 @@ Engine generate N random profiles dengan variasi:
 - 4 personality types (analytical, driver, amiable, expressive)
 - 8 business types (beauty clinic, auto repair shop, restaurant, etc.)
 - Random BANT scenarios
-- ~20% edge cases (scam, tech-illiterate, toxic, dll)
+- ~20% edge cases (scam, tech-illiterate, toxic, etc.)
 
 Profiles disimpan di `profiles/profile-{NNN}.yaml`
 
