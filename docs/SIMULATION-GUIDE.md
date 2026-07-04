@@ -40,9 +40,9 @@ simulate: {"project": "nuxhub-alpha-propolis", "count": 10, "parallel": 5}
 ### 1. Profile Generation
 Engine generate N random profiles dengan variasi:
 - 4 personality types (analytical, driver, amiable, expressive)
-- 8 business types (klinik, bengkel, resto, dll)
+- 8 business types (beauty clinic, auto repair shop, restaurant, etc.)
 - Random BANT scenarios
-- ~20% edge cases (scam, gaptek, toxic, dll)
+- ~20% edge cases (scam, tech-illiterate, toxic, dll)
 
 Profiles disimpan di `profiles/profile-{NNN}.yaml`
 

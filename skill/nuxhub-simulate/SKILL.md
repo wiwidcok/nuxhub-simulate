@@ -62,7 +62,7 @@ Skill akan:
     └── ANALYSIS-METRICS.md
 ```
 
-## ALUR OTOMATIS (JANGAN TANYA, JANGAN PAUSE)
+## ALUR OTOMATIS (DON'T TANYA, DON'T PAUSE)
 
 ### STEP 1: LOAD PROJECT CONFIG
 Baca config dari project target:
@@ -85,7 +85,7 @@ Generate N profiles (minimum 10). Setiap profile punya kombinasi random dari:
 **Demographics:**
 - nama: random Indonesian names
 - lokasi: random Indonesian cities
-- bisnis: random business types (klinik, bengkel, resto, toko online, jasa, dll)
+- business: random business types (beauty clinic, auto repair shop, restaurant, online store, repair service, etc.)
 - business_stage: baru | kecil | menengah | berkembang | besar
 
 **Psychology (4 tipe):**
@@ -107,7 +107,7 @@ Generate N profiles (minimum 10). Setiap profile punya kombinasi random dari:
 - mahal | belum_yakin | nanti_dulu | sudah_punya_vendor | tidak_ada_budget | belum_bisa_keputusan
 
 **Edge cases (distribusi ~20% dari total):**
-- gaptek/typo berat
+- tech-illiterate/typo berat
 - bahasa campur (Indo+daerah)
 - pesan sangat pendek (1-3 kata)
 - scam pattern (test spam gate)
@@ -152,7 +152,7 @@ conversation_simulation:
   response_style: string         # cara user merespons agent
   objection_trigger: string | null  # objection yang akan dilontarkan
   objection_turn: integer | null    # turn berapa objection muncul
-  edge_case: string | null       # gaptek | scam | toxic | dll
+  edge_case: string | null       # tech-illiterate | scam | toxic | dll
   max_turns: integer             # berapa turn user akan respons sebelum ghost/stop
 
 expected_outcome:
@@ -218,7 +218,7 @@ Setiap artifact dari specialist agent WAJIB di-QA:
 1. Kirim error report dari Judge ke specialist agent
 2. Specialist re-generate dengan mode:fix
 3. Re-judge hasil fix
-4. Max 3 retry. Jika masih fail → catat sebagai `fixer_exhausted`, lanjut ke turn berikutnya (jangan block simulation)
+4. Max 3 retry. Jika masih fail → catat sebagai `fixer_exhausted`, lanjut ke turn berikutnya (don't block simulation)
 
 ### STEP 5: ANALISA HASIL
 Setelah semua simulasi selesai, jalankan analisa komprehensif:
@@ -371,7 +371,7 @@ personality_breakdown:                # performance per personality type
   expressive: ...
 
 edge_case_results:                    # edge case handling
-  gaptek:
+  tech-illiterate:
     count: integer
     correctly_handled: integer
     false_positive_spam: integer
@@ -417,15 +417,15 @@ Setiap project nuxhub punya konteks bisnis berbeda. Profile generator WAJIB adap
 2. Baca `shared/personalities.yaml` → tahu personality types
 3. Baca `shared/goals.yaml` → tahu conversion goals
 4. Generate profiles yang relevant ke produk tersebut:
-   - Contoh: project propolis → profiles yang relevan (reseller, konsumen personal, klinik, apotek)
-   - Contoh: project digital agency → profiles bisnis (UMKM, resto, bengkel, klinik)
+   - Example: propolis project → relevant profiles (reseller, personal consumer, beauty clinic, pharmacy)
+   - Example: digital agency project → business profiles (SMEs, restaurant, auto repair shop, beauty clinic)
 
 Distribusi profile types (per 10 profiles):
 - 2 analytical, 2 driver, 2 amiable, 2 expressive (8 normal)
-- 2 edge cases (scam, gaptek, toxic, enterprise, ghost, off-topic)
+- 2 edge cases (scam, tech-illiterate, toxic, enterprise, ghost, off-topic)
 
 ## ANALISA FOKUS
-Analisa UTAMA adalah: **gimana cara AI menjawab user**
+Analisa UTAMA adalah: **how about cara AI menjawab user**
 
 Dievaluasi:
 1. **Tone alignment**: AI response cocok dengan personality user?
@@ -455,5 +455,5 @@ Dievaluasi:
 - Max turns per simulation: 30 (hard cap)
 - Timeout per simulation: 300 detik
 - Fixer loop max: 3 retry per artifact
-- Jangan modify project source files
+- Do not modify project source files
 - Semua output ke simulation folder only

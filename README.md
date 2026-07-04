@@ -30,10 +30,10 @@ NuxHub Simulate answers all of these by running **synthetic conversations** thro
 ### 1. Random Profile Generation
 Generate 10+ realistic lead profiles with diverse characteristics:
 - **4 personality types**: Analytical, Driver, Amiable, Expressive
-- **8+ business types**: Klinik kecantikan, bengkel, resto, toko online, apotek, reseller, wellness agency, personal consumer
+- **8+ business types**: Beauty clinics, auto repair shops, restaurants, online stores, pharmacies, resellers, wellness agencies, personal consumers
 - **Variable BANT scores**: Hot (80+), Warm (50-80), Cold (<50)
 - **8 intent levels**: From "unknown" to "transaction_ready"
-- **Edge cases** (~20% of profiles): Scammers, toxic users, gaptek (tech-illiterate), enterprise leads, ghost leads, off-topic
+- **Edge cases** (~20% of profiles): Scammers, toxic users, tech-illiterate users, enterprise leads, ghost leads, off-topic
 
 ### 2. Full Pipeline Simulation
 Each profile runs through your complete AI pipeline as a multi-turn conversation:
@@ -102,7 +102,7 @@ When you install and run NuxHub Simulate, you get:
 | **AI Response Quality Scores** | Quantitative scores for tone, empathy, pushiness, question relevance — per turn and aggregated |
 | **Bottleneck Identification** | Know exactly which agent/state is slowing down or blocking lead progression |
 | **Personality Adaptation Audit** | Verify your AI adapts its tone correctly for analytical, driver, amiable, and expressive users |
-| **Edge Case Validation** | Confirm your spam gate catches scammers, your escalation gate catches enterprise/legal/complaint leads, and your AI handles elderly/gaptek users with patience |
+| **Edge Case Validation** | Confirm your spam gate catches scammers, your escalation gate catches enterprise/legal/complaint leads, and your AI handles tech-illiterate and elderly users with patience |
 | **Schema Compliance Report** | Verify every agent produces artifacts that comply with your schema definitions |
 | **Fixer Loop Effectiveness** | Track how often the fixer loop is triggered and how often it resolves issues |
 | **Sales Funnel Leakage Points** | Identify exactly where leads drop off in the journey from discovery to conversion |
@@ -196,7 +196,7 @@ open <simulation-data-path>/nuxhub-alpha-propolis-simulation/reports/sim-latest.
 │  2. GENERATE PROFILES (min 10)                                │
 │     ┌────────────────────────────────────────┐               │
 │     │ 8 normal profiles (2 per personality)  │               │
-│     │ 2 edge cases (scam, gaptek, etc.)       │               │
+│     │ 2 edge cases (scam, tech-illiterate, etc.)│               │
 │     └────────────────────────────────────────┘               │
 │                                                              │
 │  3. RUN SIMULATIONS (parallel via delegate_task)             │
@@ -249,7 +249,7 @@ nuxhub-simulate/
 │   ├── profile-004.yaml         # Example: expressive, warm lead
 │   ├── profile-005.yaml         # Example: analytical, warm lead
 │   ├── profile-006.yaml         # Example: driver, cold lead
-│   ├── profile-007.yaml         # Example: amiable, edge case: gaptek
+│   ├── profile-007.yaml         # Example: amiable, edge case: tech-illiterate
 │   ├── profile-008.yaml         # Example: edge case: scammer
 │   ├── profile-009.yaml         # Example: edge case: enterprise escalation
 │   └── profile-010.yaml         # Example: expressive, warm lead
@@ -272,7 +272,7 @@ Per 10 profiles generated:
 | Normal | Amiable | 2 | Test empathetic, relationship-building responses |
 | Normal | Expressive | 2 | Test enthusiastic, vision-driven responses |
 | Edge Case | Scam | 1 | Test spam gate blacklist |
-| Edge Case | Enterprise/Toxic/Gaptek/Ghost | 1 | Test escalation/gate handling |
+| Edge Case | Enterprise/Toxic/Tech-illiterate/Ghost | 1 | Test escalation/gate handling |
 
 ---
 

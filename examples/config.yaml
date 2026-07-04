@@ -53,7 +53,7 @@ profile_distribution:
     driver: 2
     amiable: 2
     expressive: 2
-  edge_cases: 2               # scam, gaptek, toxic, enterprise, ghost, off-topic
+  edge_cases: 2               # scam, tech-illiterate, toxic, enterprise, ghost, off-topic
 
 # Business context untuk profile generator
 business_context:
@@ -65,11 +65,11 @@ business_context:
   
   business_types:
     - klinik_kecantikan
-    - bengkel
-    - resto
+    - auto repair shop
+    - restaurant
     - toko_online
     - jasa_service
-    - apotek
+    - pharmacy
     - klinik_kesehatan
     - reseller_propolis
     - konsumen_personal

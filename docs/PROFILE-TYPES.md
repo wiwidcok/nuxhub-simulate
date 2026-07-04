@@ -4,8 +4,8 @@
 
 ### 1. Analytical
 - **Ciri**: Minta data spesifik, angka, statistik. Bahasa formal, terstruktur.
-- **Signals**: "berapa", "gimana caranya", "apa buktinya", "data nya dong"
-- **Tone rules**: Kasih data, jangan lebay, struktur: fakta → data → kesimpulan
+- **Signals**: "berapa", "how about caranya", "apa buktinya", "data nya dong"
+- **Tone rules**: Kasih data, don't lebay, struktur: fakta → data → kesimpulan
 - **Objection style**: Minta ROI calculation, case study, perbandingan
 - **Expected AI behavior**: Agent harus kasih data, bukan klaim kosong
 
@@ -14,20 +14,20 @@
 - **Signals**: "langsung aja", "berapa lama", "kapan mulai", "mau", "perlu"
 - **Tone rules**: Kasih opsi 2-3, rekomendasi tegas, highlight speed + hasil
 - **Objection style**: "Terlalu lama", "Ada yang lebih cepat?"
-- **Expected AI behavior**: Agent harus singkat, jangan bertele-tele
+- **Expected AI behavior**: Agent harus singkat, don't bertele-tele
 
 ### 3. Amiable
 - **Ciri**: Cerita panjang, relationship-focused, butuh koneksi personal.
 - **Signals**: "saya rasa", "menurut saya", "pengalaman", cerita personal
 - **Tone rules**: Bangun rapport, validasi perasaan, storytelling, bahasa hangat
 - **Objection style**: "Nanti saya diskusi keluarga dulu", "Saya mikir-mikir dulu"
-- **Expected AI behavior**: Agent harus empati, jangan buru-buru
+- **Expected AI behavior**: Agent harus empati, don't buru-buru
 
 ### 4. Expressive
 - **Ciri**: Antusias, vision-driven, big picture, suka ide baru.
 - **Signals**: "bayangkan", "potensinya", banyak seru (!), emoji
-- **Tone rules**: Match energi, gambarkan visi, jangan terlalu technical
-- **Objection style**: "Tapi nanti gimana?", "Besar ya potensinya?"
+- **Tone rules**: Match energi, gambarkan visi, don't terlalu technical
+- **Objection style**: "Tapi nanti how about?", "Besar ya potensinya?"
 - **Expected AI behavior**: Agent harus antusias tapi profesional
 
 ## BANT Scenarios
@@ -71,7 +71,7 @@
 2: problem_aware   — "Susah", "butuh solusi"
 3: solution_aware  — "Butuh iklan", "butuh konsultasi"
 4: product_aware   — "Harganya berapa", "paketnya apa"
-5: intent_confirmed — "Mau", "saya ambil", "gimana ordernya"
+5: intent_confirmed — "Mau", "saya ambil", "how about ordernya"
 6: data_complete   — "Sudah kasih nomor", "sudah kasih alamat"
 7: transaction_ready — "Produk jelas", "kontak jelas", "metode bayar jelas"
 8: converted        — "Handoff sent", "order created"
@@ -79,7 +79,7 @@
 
 ## Edge Cases (~20% dari total profiles)
 
-### gaptek
+### tech-illiterate
 - Typo berat, bahasa campur Indo+daerah
 - Pesan singkat, tidak jelas
 - Test: AI harus sabar, toleransi, tidak anggap spam
