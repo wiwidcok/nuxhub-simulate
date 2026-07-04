@@ -1,0 +1,46 @@
+profile_id: "sim-008"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "SCAMMER BOT"
+  age_range: "unknown"
+  location: "unknown"
+  business_type: "unknown"
+  business_stage: "unknown"
+
+psychology:
+  type: "driver"
+  confidence: 0.10
+  signals: []
+  tone_description: "ALL CAPS, urgency manipulation, scam pattern"
+
+bant:
+  budget: "nihil"
+  authority: "unknown"
+  need: "unknown"
+  timeline: "unknown"
+  expected_bant_score: 0
+  expected_tier: "cold"
+
+intent:
+  initial_level: "unknown"
+  target_level: "unknown"
+
+conversation_simulation:
+  opening_message: "BUTUH PINJAMAN CEPAT?? BUNGA RENDAH 0.1%!! TRANSFER SEKARANG KE REKENING 1234567890 GABISA NUNGGU LAMA!!! JANGAN SAMPAI KETINGGALAN!!!"
+  response_style: "ALL CAPS, urgency, scam patterns. Tidak relevant ke propolis."
+  objection_trigger: null
+  objection_turn: null
+  edge_case: "scam"
+  max_turns: 2
+
+expected_outcome:
+  final_state: "BLACKLIST"
+  should_convert: false
+  conversion_type: null
+  expected_obstacles:
+    - "Spam gate MUST detect: +50 scam pattern (transfer, rekening, pinjaman, bunga rendah)"
+    - "Spam gate MUST detect: +50 ALL CAPS urgency"
+    - "Total spam_score = 100+ → BLACKLIST, no response"
+    - "If AI responds → CRITICAL FAILURE (spam false negative)"

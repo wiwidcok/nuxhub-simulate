@@ -1,0 +1,46 @@
+profile_id: "sim-010"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Fauzan Rahman"
+  age_range: "25-35"
+  location: "Makassar"
+  business_type: "agen_wellness"
+  business_stage: "menengah"
+
+psychology:
+  type: "expressive"
+  confidence: 0.80
+  signals: ["bayangkan", "potensinya", "!", antusias]
+  tone_description: "Antusias, vision-driven, suka ide besar"
+
+bant:
+  budget: "ada (5-20jt)"
+  authority: "sendiri"
+  need: "urgent"
+  timeline: "segera"
+  expected_bant_score: 75
+  expected_tier: "warm"
+
+intent:
+  initial_level: "product_aware"
+  target_level: "transaction_ready"
+
+conversation_simulation:
+  opening_message: "Halo!! Saya Fauzan, agen wellness di Makassar! Bayangkan potensinya — propolis lagi trend banget! Saya mau jadi distributor besar! Gimana paket profesionalnya? Harganya berapa?!"
+  response_style: "Antusias, banyak tanda seru. Cepat excited, tanya harga dan paket langsung."
+  objection_trigger: "sudah_punya_brand_lain"
+  objection_turn: 4
+  edge_case: null
+  max_turns: 15
+
+expected_outcome:
+  final_state: "CONVERSION"
+  should_convert: true
+  conversion_type: "consultation_booking"
+  expected_obstacles:
+    - "AI harus match energi expressive — jangan kaku/robotic"
+    - "Objection 'sudah punya brand lain' butuh differentiation, bukan dismissive"
+    - "Expressive butuh visi besar — AI harus paint the picture"
+    - "Intent sudah product_aware — AI harus cepat, jangan terlalu banyak discovery"

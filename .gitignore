@@ -1,0 +1,20 @@
+# Temp files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Simulation output (don't commit run results)
+artifacts/
+qa/
+fixer/
+analysis/
+reports/

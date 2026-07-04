@@ -1,0 +1,45 @@
+profile_id: "sim-006"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Rudi Santoso"
+  age_range: "35-45"
+  location: "Semarang"
+  business_type: "jasa_service"
+  business_stage: "kecil"
+
+psychology:
+  type: "driver"
+  confidence: 0.80
+  signals: ["langsung aja", "mau", "berapa", "kapan"]
+  tone_description: "Pendek, langsung, mau cepat. Tidak suka basa-basi."
+
+bant:
+  budget: "terbatas (<5jt)"
+  authority: "sendiri"
+  need: "low"
+  timeline: "tidak_tahu"
+  expected_bant_score: 35
+  expected_tier: "cold"
+
+intent:
+  initial_level: "unknown"
+  target_level: "problem_aware"
+
+conversation_simulation:
+  opening_message: "Jasa service AC di Semarang. Butuh customer. Bisa bantu?"
+  response_style: "Pendek. 3-8 kata per balasan. Kalau AI bertele-tele → ghost."
+  objection_trigger: null
+  objection_turn: null
+  edge_case: null
+  max_turns: 8
+
+expected_outcome:
+  final_state: "FOLLOW_UP"
+  should_convert: false
+  conversion_type: null
+  expected_obstacles:
+    - "Driver + cold lead = high ghost risk. AI harus cepat kasih value."
+    - "Budget terbatas + timeline tidak tahu = cold. AI harus tahu kapan nurun ke follow_up."
+    - "Jika AI terlalu banyak tanya discovery, driver akan keluar."

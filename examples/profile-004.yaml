@@ -1,0 +1,45 @@
+profile_id: "sim-004"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Andi Pratama"
+  age_range: "25-35"
+  location: "Bali"
+  business_type: "resto"
+  business_stage: "menengah"
+
+psychology:
+  type: "expressive"
+  confidence: 0.85
+  signals: ["bayangkan", "potensinya", "!", emoji, antusias]
+  tone_description: "Antusias, bicara tentang potensi besar, vision-driven, cepat excited"
+
+bant:
+  budget: "ada (5-20jt)"
+  authority: "sendiri"
+  need: "medium"
+  timeline: "3bulan"
+  expected_bant_score: 60
+  expected_tier: "warm"
+
+intent:
+  initial_level: "curious"
+  target_level: "intent_confirmed"
+
+conversation_simulation:
+  opening_message: "Halo!! Saya Andi, punya resto di Bali! Potensinya SIUUU gede banget, bayangkan kalau bisa viral di TikTok! Saya pengen banget scale up, gimana caranya?!"
+  response_style: "Antusias, banyak tanda seru, bicara visi besar. Cepat excited tapi juga bisa cepat kehilangan minat."
+  objection_trigger: "nanti_dulu"
+  objection_turn: 5
+  edge_case: null
+  max_turns: 15
+
+expected_outcome:
+  final_state: "FOLLOW_UP"
+  should_convert: false
+  conversion_type: null
+  expected_obstacles:
+    - "AI mungkin tidak match energi expressive, jadi terlalu kaku"
+    - "Expressive cepat kehilangan minat — AI harus keep momentum"
+    - "Objection 'nanti dulu' butuh future pacing, bukan data"

@@ -1,0 +1,45 @@
+profile_id: "sim-003"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Ibu Maryati"
+  age_range: "45-55"
+  location: "Yogyakarta"
+  business_type: "apotek"
+  business_stage: "kecil"
+
+psychology:
+  type: "amiable"
+  confidence: 0.80
+  signals: ["saya rasa", "menurut saya", "pengalaman", cerita personal]
+  tone_description: "Cerita panjang tentang bisnis keluarga, banyak konteks personal, butuh rapport"
+
+bant:
+  budget: "terbatas (<5jt)"
+  authority: "sendiri"
+  need: "medium"
+  timeline: "1bulan"
+  expected_bant_score: 55
+  expected_tier: "warm"
+
+intent:
+  initial_level: "curious"
+  target_level: "intent_confirmed"
+
+conversation_simulation:
+  opening_message: "Halo, perkenalkan saya Maryati. Saya punya apotek kecil di Yogyakarta dari 2010. Dulu ramai, sekarang agak sepi karena banyak kompetitor online. Saya mikir mungkin perlu bantuan marketing, tapi saya orang tua, tidak terlalu paham teknologi."
+  response_style: "Cerita panjang, banyak konteks personal. Jawaban lambat tapi detail. Suka share pengalaman."
+  objection_trigger: "tidak_ada_budget"
+  objection_turn: 7
+  edge_case: null
+  max_turns: 18
+
+expected_outcome:
+  final_state: "FOLLOW_UP"
+  should_convert: false
+  conversion_type: null
+  expected_obstacles:
+    - "AI mungkin terlalu cepat push offer untuk amiable type yang butuh rapport"
+    - "Budget terbatas — AI harus offer konsultasi gratis, bukan paket berbayar"
+    - "Amiable butuh empati, AI robotic bisa bikin user hilang"

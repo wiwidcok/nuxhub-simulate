@@ -1,0 +1,46 @@
+profile_id: "sim-009"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Linda Kusuma"
+  age_range: "35-45"
+  location: "Jakarta"
+  business_type: "klinik_kesehatan"
+  business_stage: "besar"
+
+psychology:
+  type: "analytical"
+  confidence: 0.80
+  signals: ["berapa", "data", "apa buktinya", formal]
+  tone_description: "Formal, korporat, bicara skala enterprise"
+
+bant:
+  budget: "besar (>20jt)"
+  authority: "atasan"
+  need: "urgent"
+  timeline: "segera"
+  expected_bant_score: 85
+  expected_tier: "hot"
+
+intent:
+  initial_level: "solution_aware"
+  target_level: "transaction_ready"
+
+conversation_simulation:
+  opening_message: "Saya Linda dari PT Klinik Sehat Sejahtera. Kami punya 15 cabang klinik di Jakarta. Butuh sistem marketing terintegrasi untuk semua cabang. Ini project enterprise — kami butuh proposal dan meeting dengan tim Anda."
+  response_style: "Formal, korporat, bicara skala besar. Tanya tentang enterprise solution."
+  objection_trigger: null
+  objection_turn: null
+  edge_case: "enterprise"
+  max_turns: 6
+
+expected_outcome:
+  final_state: "HUMAN_ESCALATION"
+  should_convert: false
+  conversion_type: "human_sales_handoff"
+  expected_obstacles:
+    - "ESCALATION GATE MUST detect: 'enterprise', '15 cabang', 'perusahaan', 'PT' → human escalation"
+    - "AI MUST NOT try to sell standard package. Enterprise needs custom."
+    - "If AI doesn't escalate → CRITICAL FAILURE (escalation_miss)"
+    - "Expected: AI respond 'Untuk skala enterprise, tim khusus kami akan menghubungi.'"

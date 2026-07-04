@@ -1,0 +1,120 @@
+# NuxHub Alpha Propolis — Simulation Config
+# Config untuk simulation engine. Baca oleh skill nuxhub-simulate.
+
+project:
+  name: "nuxhub-alpha-propolis"
+  description: "Propolis sales pipeline — lead nurturing, qualification, closing"
+  source_path: "/root/www/nuxhub-ai"
+  
+  # Path ke shared configs project target
+  shared_configs:
+    personalities: "/root/www/nuxhub-ai/shared/personalities.yaml"
+    products: "/root/www/nuxhub-ai/shared/products.yaml"
+    goals: "/root/www/nuxhub-ai/shared/goals.yaml"
+    intent_ladder: "/root/www/nuxhub-ai/shared/intent_ladder.yaml"
+    spam_gate: "/root/www/nuxhub-ai/shared/spam_gate.yaml"
+    context_guard: "/root/www/nuxhub-ai/shared/context_guard.yaml"
+    next_best_action: "/root/www/nuxhub-ai/shared/next_best_action.yaml"
+    requirement_resolver: "/root/www/nuxhub-ai/shared/requirement_resolver.yaml"
+    conversion_readiness: "/root/www/nuxhub-ai/shared/conversion_readiness.yaml"
+  
+  schemas:
+    state_machine: "/root/www/nuxhub-ai/schemas/state_machine.yaml"
+    artifact_schemas: "/root/www/nuxhub-ai/schemas/artifact_schemas.yaml"
+    handoff_packet: "/root/www/nuxhub-ai/schemas/handoff_packet.yaml"
+
+# Skill packs yang dipakai (Hermes skills)
+skills:
+  orchestrator: "nuxhub-orchestrator"
+  router: "nuxhub-router"
+  discovery: "nuxhub-discovery"
+  qualification: "nuxhub-qualification"
+  objection: "nuxhub-objection"
+  closing: "nuxhub-closing"
+  follow_up: "nuxhub-followup"
+  judge: "nuxhub-judge"
+
+# Simulation parameters
+simulation:
+  default_count: 10           # minimum profiles per run
+  max_count: 50               # hard cap
+  parallel: 3                 # concurrent simulations via delegate_task
+  max_turns_per_sim: 30        # hard cap turns per profile
+  timeout_per_sim: 300         # seconds
+  fixer_max_retry: 3          # per artifact
+  
+  # Phase: "all" = full pipeline, atau specify phase untuk partial test
+  default_phase: "all"
+
+# Profile distribution (per 10 profiles)
+profile_distribution:
+  normal:
+    analytical: 2
+    driver: 2
+    amiable: 2
+    expressive: 2
+  edge_cases: 2               # scam, gaptek, toxic, enterprise, ghost, off-topic
+
+# Business context untuk profile generator
+business_context:
+  products:
+    - paket_starter
+    - paket_profesional
+    - paket_enterprise
+    - konsultasi
+  
+  business_types:
+    - klinik_kecantikan
+    - bengkel
+    - resto
+    - toko_online
+    - jasa_service
+    - apotek
+    - klinik_kesehatan
+    - reseller_propolis
+    - konsumen_personal
+    - agen_wellness
+  
+  locations:
+    - Jakarta
+    - Bandung
+    - Surabaya
+    - Semarang
+    - Yogyakarta
+    - Medan
+    - Palembang
+    - Makassar
+    - Bali
+    - Bogor
+    - Tangerang
+    - Bekasi
+  
+  # Objection types yang relevan untuk propolis
+  objection_types:
+    - mahal
+    - belum_yakin_khasiat
+    - nanti_dulu
+    - sudah_punya_brand_lain
+    - tidak_ada_budget
+    - belum_bisa_keputusan
+    - perlu_tanya_dokter
+    - takut_efek_samping
+
+# Paths
+paths:
+  simulation_root: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation"
+  profiles_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/profiles"
+  artifacts_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/artifacts"
+  qa_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/qa"
+  fixer_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/fixer"
+  analysis_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/analysis"
+  reports_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/reports"
+  docs_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/docs"
+  log_reports: "/var/log/nuxhub-ai/simulations"
+
+# Artifact format
+artifact_format: "yaml"        # yaml | json | both
+qa_format: "yaml"
+fixer_format: "yaml"
+analysis_format: "yaml"
+report_format: "html+pdf"     # html | pdf | html+pdf

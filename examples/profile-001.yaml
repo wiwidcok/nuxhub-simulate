@@ -1,0 +1,44 @@
+profile_id: "sim-001"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Budi Hartono"
+  age_range: "35-45"
+  location: "Jakarta"
+  business_type: "klinik_kecantikan"
+  business_stage: "menengah"
+
+psychology:
+  type: "analytical"
+  confidence: 0.85
+  signals: ["berapa", "data nya dong", "apa buktinya", "gimana caranya"]
+  tone_description: "Formal, banyak tanya data spesifik, minta angka dan statistik sebelum putus"
+
+bant:
+  budget: "ada (5-20jt)"
+  authority: "sendiri"
+  need: "urgent"
+  timeline: "segera"
+  expected_bant_score: 85
+  expected_tier: "hot"
+
+intent:
+  initial_level: "problem_aware"
+  target_level: "transaction_ready"
+
+conversation_simulation:
+  opening_message: "Halo, saya pemilik klinik kecantikan di Jakarta. Saat ini pasien saya stagnan di 30 per bulan. Target saya 100 per bulan. Saya butuh data — berapa biaya marketing yang efektif untuk klinik seperti saya?"
+  response_style: "Jawaban detail dengan angka spesifik. Tanya data sebelum commit. Minta case study atau ROI."
+  objection_trigger: "mahal"
+  objection_turn: 6
+  edge_case: null
+  max_turns: 20
+
+expected_outcome:
+  final_state: "CONVERSION"
+  should_convert: true
+  conversion_type: "consultation_booking"
+  expected_obstacles:
+    - "AI mungkin terlalu cepat offer sebelum data cukup untuk analytical type"
+    - "Objection 'mahal' butuh ROI calculation, bukan reassurance"

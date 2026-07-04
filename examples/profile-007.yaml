@@ -1,0 +1,46 @@
+profile_id: "sim-007"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Pak Suryono"
+  age_range: "55+"
+  location: "Medan"
+  business_type: "konsumen_personal"
+  business_stage: "baru"
+
+psychology:
+  type: "amiable"
+  confidence: 0.65
+  signals: ["saya rasa", "pengalaman", "menurut saya", bahasa lambat]
+  tone_description: "Orang tua, gaptek, bahasa campur, butuh sabar"
+
+bant:
+  budget: "ada (5-20jt)"
+  authority: "sendiri"
+  need: "medium"
+  timeline: "3bulan"
+  expected_bant_score: 55
+  expected_tier: "warm"
+
+intent:
+  initial_level: "curious"
+  target_level: "intent_confirmed"
+
+conversation_simulation:
+  opening_message: "Assalamualaikum... saya suryono dari medan. saya denger propolis itu bagus untuk kesehatan. saya mau tanya2 soal itu. saya kurang paham gadget jadi sabar ya hehe"
+  response_style: "Bahasa lambat, typo, campur Indo+daerah. Jawaban panjang tapi tidak terstruktur."
+  objection_trigger: "perlu_tanya_dokter"
+  objection_turn: 6
+  edge_case: "gaptek"
+  max_turns: 18
+
+expected_outcome:
+  final_state: "FOLLOW_UP"
+  should_convert: false
+  conversion_type: null
+  expected_obstacles:
+    - "SPAM GATE FALSE POSITIVE: gaptek bukan spam. Spam score harus 0."
+    - "AI mungkin tidak sabar dengan jawaban lambat/typo"
+    - "Objection 'perlu tanya dokter' butuh info ilmiah, bukan push sales"
+    - "Edge case: gaptek — AI harus toleransi typo dan bahasa campur"

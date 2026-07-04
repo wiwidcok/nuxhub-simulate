@@ -1,0 +1,44 @@
+profile_id: "sim-002"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Sari Wulandari"
+  age_range: "25-35"
+  location: "Bandung"
+  business_type: "toko_online"
+  business_stage: "berkembang"
+
+psychology:
+  type: "driver"
+  confidence: 0.90
+  signals: ["langsung aja", "berapa lama", "kapan mulai", "mau", "perlu"]
+  tone_description: "Pesan pendek, to the point, tidak sabar dengan penjelasan panjang"
+
+bant:
+  budget: "besar (>20jt)"
+  authority: "sendiri"
+  need: "urgent"
+  timeline: "segera"
+  expected_bant_score: 95
+  expected_tier: "hot"
+
+intent:
+  initial_level: "solution_aware"
+  target_level: "transaction_ready"
+
+conversation_simulation:
+  opening_message: "Toko online saya di Bandung butuh scale up. Mau mulai iklan. Berapa lama bisa mulai? Langsung aja ya."
+  response_style: "Jawaban sangat pendek. 1-5 kata. Kalimat tidak lengkap. Cepat."
+  objection_trigger: "belum_bisa_keputusan"
+  objection_turn: 4
+  edge_case: null
+  max_turns: 12
+
+expected_outcome:
+  final_state: "CONVERSION"
+  should_convert: true
+  conversion_type: "tripwire_purchase"
+  expected_obstacles:
+    - "AI mungkin terlalu bertele-tele untuk driver type, bisa bikin user ghost"
+    - "Driver butuh opsi langsung, bukan banyak pertanyaan discovery"

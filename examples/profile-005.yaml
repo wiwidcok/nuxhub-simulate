@@ -1,0 +1,44 @@
+profile_id: "sim-005"
+generated_at: "2026-07-03T12:00:00Z"
+project: "nuxhub-alpha-propolis"
+
+persona:
+  name: "Dewi Sagita"
+  age_range: "25-35"
+  location: "Surabaya"
+  business_type: "reseller_propolis"
+  business_stage: "baru"
+
+psychology:
+  type: "analytical"
+  confidence: 0.75
+  signals: ["berapa", "data nya dong", "apa buktinya"]
+  tone_description: "Formal, tanya detail produk, minta data khasiat dan komposisi"
+
+bant:
+  budget: "terbatas (<5jt)"
+  authority: "sendiri"
+  need: "medium"
+  timeline: "1bulan"
+  expected_bant_score: 50
+  expected_tier: "warm"
+
+intent:
+  initial_level: "product_aware"
+  target_level: "transaction_ready"
+
+conversation_simulation:
+  opening_message: "Halo, saya Dewi dari Surabaya. Saya tertarik jadi reseller propolis. Bisa kasih data detail tentang produknya? Komposisi, sertifikasi, margin keuntungan, dan minimum order berapa?"
+  response_style: "Detail, terstruktur, tanya data produk spesifik. Minta perbandingan dengan competitor."
+  objection_trigger: "belum_yakin_khasiat"
+  objection_turn: 5
+  edge_case: null
+  max_turns: 20
+
+expected_outcome:
+  final_state: "CONVERSION"
+  should_convert: true
+  conversion_type: "transfer_order"
+  expected_obstacles:
+    - "AI mungkin tidak punya data produk detail (komposisi, sertifikasi)"
+    - "Analytical butuh data konkret, AI yang kasih klaim kosong akan fail"
