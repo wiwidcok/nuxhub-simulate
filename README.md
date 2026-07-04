@@ -135,13 +135,13 @@ cp -r nuxhub-simulate/skill/nuxhub-simulate ~/.hermes/skills/nuxhub/
 
 ```bash
 # Create simulation folder (FHS standard: state data in /var/lib)
-mkdir -p /var/lib/nuxhub-ai/simulations/{your-project}-simulation/{profiles,artifacts,qa,fixer,analysis,reports,docs}
+mkdir -p <simulation-data-path>/{your-project}-simulation/{profiles,artifacts,qa,fixer,analysis,reports,docs}
 
 # Copy config template and edit to match your project
-cp nuxhub-simulate/examples/config.yaml /var/lib/nuxhub-ai/simulations/{your-project}-simulation/config.yaml
+cp nuxhub-simulate/examples/config.yaml <simulation-data-path>/{your-project}-simulation/config.yaml
 
 # Edit config.yaml to point to your project's shared configs
-vim /var/lib/nuxhub-ai/simulations/{your-project}-simulation/config.yaml
+vim <simulation-data-path>/{your-project}-simulation/config.yaml
 ```
 
 ---
@@ -171,13 +171,13 @@ simulate: {"project": "nuxhub-alpha-propolis", "count": 10, "parallel": 5}
 ### Read Results
 ```bash
 # Aggregate report
-cat /var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/analysis/aggregate-report.yaml
+cat <simulation-data-path>/nuxhub-alpha-propolis-simulation/analysis/aggregate-report.yaml
 
 # Per-profile analysis
-cat /var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/analysis/sim-001-analysis.yaml
+cat <simulation-data-path>/nuxhub-alpha-propolis-simulation/analysis/sim-001-analysis.yaml
 
 # HTML report
-open /var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/reports/sim-latest.html
+open <simulation-data-path>/nuxhub-alpha-propolis-simulation/reports/sim-latest.html
 ```
 
 ---
@@ -312,7 +312,7 @@ Edit `config.yaml` to customize your simulation:
 ```yaml
 project:
   name: "nuxhub-alpha-propolis"
-  source_path: "/root/www/nuxhub-ai"
+  source_path: "<your-nuxhub-source-path>"
   shared_configs:
     personalities: "/path/to/personalities.yaml"
     products: "/path/to/products.yaml"

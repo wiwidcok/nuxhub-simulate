@@ -30,7 +30,7 @@ Skill akan:
 
 ## STRUKTUR FOLDER SIMULATION
 ```
-/var/lib/nuxhub-ai/simulations/{project}-simulation/
+<simulation-data-path>/{project}-simulation/
 ├── config.yaml              # Config simulasi (path ke project, parameter)
 ├── profiles/                # Generated random profiles
 │   ├── profile-001.yaml
@@ -440,10 +440,10 @@ Dievaluasi:
 10. **False positive/negative**: Spam/escalation miss?
 
 ## PATH CONVENTION (FHS)
-- Simulation data: `/var/lib/nuxhub-ai/simulations/{project}-simulation/`
-- Reports: `/var/log/nuxhub-ai/simulations/` (copy dari simulation folder)
-- Skill code: `/root/.hermes/skills/nuxhub-simulate/`
-- Project source: `/root/www/nuxhub-ai/` (atau path lain dari config)
+- Simulation data: `<simulation-data-path>/{project}-simulation/`
+- Reports: `<nuxhub-log-path>/simulations/` (copy dari simulation folder)
+- Skill code: `<hermes-skills-path>/nuxhub-simulate/`
+- Project source: `<your-nuxhub-source-path>/` (atau path lain dari config)
 
 ## PARALLEL EXECUTION
 - Gunakan delegate_task untuk run multiple simulations concurrently

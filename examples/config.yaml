@@ -4,24 +4,24 @@
 project:
   name: "nuxhub-alpha-propolis"
   description: "Propolis sales pipeline — lead nurturing, qualification, closing"
-  source_path: "/root/www/nuxhub-ai"
+  source_path: "<your-nuxhub-source-path>"
   
   # Path ke shared configs project target
   shared_configs:
-    personalities: "/root/www/nuxhub-ai/shared/personalities.yaml"
-    products: "/root/www/nuxhub-ai/shared/products.yaml"
-    goals: "/root/www/nuxhub-ai/shared/goals.yaml"
-    intent_ladder: "/root/www/nuxhub-ai/shared/intent_ladder.yaml"
-    spam_gate: "/root/www/nuxhub-ai/shared/spam_gate.yaml"
-    context_guard: "/root/www/nuxhub-ai/shared/context_guard.yaml"
-    next_best_action: "/root/www/nuxhub-ai/shared/next_best_action.yaml"
-    requirement_resolver: "/root/www/nuxhub-ai/shared/requirement_resolver.yaml"
-    conversion_readiness: "/root/www/nuxhub-ai/shared/conversion_readiness.yaml"
+    personalities: "<your-nuxhub-source-path>/shared/personalities.yaml"
+    products: "<your-nuxhub-source-path>/shared/products.yaml"
+    goals: "<your-nuxhub-source-path>/shared/goals.yaml"
+    intent_ladder: "<your-nuxhub-source-path>/shared/intent_ladder.yaml"
+    spam_gate: "<your-nuxhub-source-path>/shared/spam_gate.yaml"
+    context_guard: "<your-nuxhub-source-path>/shared/context_guard.yaml"
+    next_best_action: "<your-nuxhub-source-path>/shared/next_best_action.yaml"
+    requirement_resolver: "<your-nuxhub-source-path>/shared/requirement_resolver.yaml"
+    conversion_readiness: "<your-nuxhub-source-path>/shared/conversion_readiness.yaml"
   
   schemas:
-    state_machine: "/root/www/nuxhub-ai/schemas/state_machine.yaml"
-    artifact_schemas: "/root/www/nuxhub-ai/schemas/artifact_schemas.yaml"
-    handoff_packet: "/root/www/nuxhub-ai/schemas/handoff_packet.yaml"
+    state_machine: "<your-nuxhub-source-path>/schemas/state_machine.yaml"
+    artifact_schemas: "<your-nuxhub-source-path>/schemas/artifact_schemas.yaml"
+    handoff_packet: "<your-nuxhub-source-path>/schemas/handoff_packet.yaml"
 
 # Skill packs yang dipakai (Hermes skills)
 skills:
@@ -102,15 +102,15 @@ business_context:
 
 # Paths
 paths:
-  simulation_root: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation"
-  profiles_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/profiles"
-  artifacts_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/artifacts"
-  qa_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/qa"
-  fixer_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/fixer"
-  analysis_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/analysis"
-  reports_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/reports"
-  docs_dir: "/var/lib/nuxhub-ai/simulations/nuxhub-alpha-propolis-simulation/docs"
-  log_reports: "/var/log/nuxhub-ai/simulations"
+  simulation_root: "<simulation-data-path>/nuxhub-alpha-propolis-simulation"
+  profiles_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/profiles"
+  artifacts_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/artifacts"
+  qa_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/qa"
+  fixer_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/fixer"
+  analysis_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/analysis"
+  reports_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/reports"
+  docs_dir: "<simulation-data-path>/nuxhub-alpha-propolis-simulation/docs"
+  log_reports: "<nuxhub-log-path>/simulations"
 
 # Artifact format
 artifact_format: "yaml"        # yaml | json | both

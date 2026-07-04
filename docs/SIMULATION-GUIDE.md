@@ -1,7 +1,7 @@
 # Simulation Guide
 
 ## Prerequisites
-1. Project source code ada di `/root/www/nuxhub-ai/`
+1. Project source code ada di `<your-nuxhub-source-path>/`
 2. Skill packs nuxhub terinstall di Hermes (`nuxhub-orchestrator`, `nuxhub-discovery`, dll)
 3. Skill `nuxhub-simulate` terinstall
 
